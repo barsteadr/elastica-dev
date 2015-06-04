@@ -1,0 +1,51 @@
+fos_elastica:
+    clients:
+        default: { host: %elastic_host%, port: %elastic_port% }
+    indexes:
+        ns_search:
+            client: default
+            types:
+                category:
+                    mappings:
+                        id:
+                            type: integer
+                        label : ~
+                    persistence:
+                        driver: orm
+                        model: NS\SearchBundle\Entity\Category
+                        finder: ~
+                        provider: ~
+                        listener: ~
+                article:
+                    mappings:
+                        id:
+                            type: integer
+                        authors :
+                            type : nested
+                            properties :
+                                firstname : ~
+                                surname : ~
+                                id: ~
+                        category :
+                            index : not_analyzed
+                        createdAt :
+                            type : date
+                        content : ~
+                        publishedAt :
+                            type : date
+                        published :
+                            type : boolean
+                        tags : ~
+                        title : ~
+                    persistence:
+                        driver: orm
+                        model: NS\SearchBundle\Entity\Article
+                        elastica_to_model_transformer:
+                            service: ns.transformers.elastica.article
+                        finder: ~
+                        provider: ~
+                        listener: ~
+                    _parent:
+                        type : "category"
+                        identifier: "id"
+                        property : "category"

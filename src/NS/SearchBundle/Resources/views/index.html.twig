@@ -1,0 +1,23 @@
+{% extends 'NSSearchBundle::layout.html.twig' %}
+
+{% block body %}
+
+    <h1>Welcome!</h1>
+
+
+    <ul>
+        <li>
+            <a href="{{ path('ns-article-search') }}">List of article - simple search</a>
+        </li>
+        <li>
+            <a href="{{ path('ns-article-export') }}">Export with scan and scroll functions</a>
+        </li>
+        <li>
+            <a href="{{ path('ns-article-stats') }}">Stats with aggregations</a>
+        </li>
+        <li>
+            <a href="{{ path('ns-category-active') }}">Active categories (with published articles) - Search with parents/child structure</a>
+        </li>
+    </ul>
+
+{% endblock %}

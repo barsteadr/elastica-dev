@@ -1,0 +1,2 @@
+_ns_search:
+    resource: "@NSSearchBundle/Resources/config/routing.yml"
