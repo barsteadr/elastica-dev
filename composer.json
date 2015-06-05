@@ -22,7 +22,9 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/elastica-bundle": "~3.1",
         "ruflin/elastica" : "1.0.*",
-        "white-october/pagerfanta-bundle": "~1.0"
+        "white-october/pagerfanta-bundle": "~1.0",
+        "raulfraile/ladybug-bundle": "^1.0",
+        "monolog/monolog": "^1.13"
     },
     "scripts": {
         "post-install-cmd": [
